@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #060AB2;
+    touch-action: manipulation;
+}
+
+.score-board {
+    display: flex;
+    padding-top: 5rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.controls {
+    text-align: center;
+    padding: 5px;
+    font-size: 4vw;
+    align-self: center;
+    margin: 0 auto;
+    color: white;
+}
+
+section.memory-game {
+    padding: 0 1rem;
+    margin-top: 4rem;
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: 32%;
+    height: 48%;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    background-color: #1c7ccc;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg)
+}
+
+button.reset-button {
+    background: #1c7ccc;
+    color: #ffffff;
+    font-size: 2rem;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 3px #000;
+    margin-top: 1rem;
+    cursor: pointer;
+}
